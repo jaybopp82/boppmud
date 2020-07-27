@@ -24,23 +24,13 @@ author of _MUD Game Programming_ book.
 ## To Run Server
 
     $ git clone https://github.com/jaybopp82/boppmud.git
-    $ cd simplemud
+    $ cd boppmud
     $ npm install
     $ npm start <port>
 
 ## To Run Client
 
     $ telnet localhost <port>
-
-## To Execute Tests
-
-All tests:
-
-    $ npm test
-
-Individual test:
-
-    $npm test "test/<ClassName>.js"
 
 ## Special Thanks
 

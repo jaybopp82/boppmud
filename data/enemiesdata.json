@@ -131,5 +131,19 @@
     "HITPOINTS": 6,
     "ROOM": 69,
     "NEXTATTACKTIME": 0
+  },
+  {
+    "ID": 20,
+    "TEMPLATEID": 7,
+    "HITPOINTS": 5,
+    "ROOM": 74,
+    "NEXTATTACKTIME": 0
+  },
+  {
+    "ID": 21,
+    "TEMPLATEID": 7,
+    "HITPOINTS": 5,
+    "ROOM": 74,
+    "NEXTATTACKTIME": 0
   }
 ]
