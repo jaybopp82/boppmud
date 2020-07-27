@@ -9,7 +9,13 @@ author of _MUD Game Programming_ book.
 
 ## Highlights
 
-* TBD
+* Brand new auction system.
+* Quest system with random targets.
+* Online editing system! Edit rooms, enemies, even help files online!
+* A quick mapping system.
+* Areas, room flags, enemy flags.
+* Many new commands: where, area, and more!
+* In active development. More features coming soon.
 
 ## Requirements
 
