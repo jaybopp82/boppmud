@@ -1,0 +1,57 @@
+[
+  {
+    "ROOMID": 1,
+    "ITEMS": "26",
+    "MONEY": 0
+  },
+  {
+    "ROOMID": 15,
+    "ITEMS": "",
+    "MONEY": 8
+  },
+  {
+    "ROOMID": 27,
+    "ITEMS": "",
+    "MONEY": 2
+  },
+  {
+    "ROOMID": 28,
+    "ITEMS": "",
+    "MONEY": 13
+  },
+  {
+    "ROOMID": 42,
+    "ITEMS": "",
+    "MONEY": 11
+  },
+  {
+    "ROOMID": 52,
+    "ITEMS": "",
+    "MONEY": 22
+  },
+  {
+    "ROOMID": 53,
+    "ITEMS": "",
+    "MONEY": 45
+  },
+  {
+    "ROOMID": 54,
+    "ITEMS": "",
+    "MONEY": 35
+  },
+  {
+    "ROOMID": 55,
+    "ITEMS": "",
+    "MONEY": 317
+  },
+  {
+    "ROOMID": 62,
+    "ITEMS": "",
+    "MONEY": 2
+  },
+  {
+    "ROOMID": 74,
+    "ITEMS": "6",
+    "MONEY": 0
+  }
+]

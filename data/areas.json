@@ -1,0 +1,42 @@
+[
+  {
+    "ID": 1,
+    "NAME": "Old Central City",
+    "MINLEVEL": 1,
+    "MAXLEVEL": 10,
+    "MOBDEATHS": 21,
+    "PLAYERDEATHS": 5,
+    "LEVELLOCK": 0,
+    "FLAGS": []
+  },
+  {
+    "ID": 2,
+    "NAME": "The Blighted Forest",
+    "MINLEVEL": 1,
+    "MAXLEVEL": 5,
+    "MOBDEATHS": 61,
+    "PLAYERDEATHS": 1,
+    "LEVELLOCK": 0,
+    "FLAGS": []
+  },
+  {
+    "ID": 3,
+    "NAME": "Xyndors Personal Area",
+    "MINLEVEL": 99,
+    "MAXLEVEL": 99,
+    "MOBDEATHS": 0,
+    "PLAYERDEATHS": 0,
+    "LEVELLOCK": 0,
+    "FLAGS": []
+  },
+  {
+    "ID": 4,
+    "NAME": "My Area",
+    "MINLEVEL": 0,
+    "MAXLEVEL": 0,
+    "MOBDEATHS": 0,
+    "PLAYERDEATHS": 0,
+    "LEVELLOCK": 0,
+    "FLAGS": []
+  }
+]

@@ -1,0 +1,27 @@
+obj descs
+obj look desc
+
+commands database
+socials
+
+add races, classes, etc.
+
+redo stores
+create sedit/sedit create
+
+add common, rare, epic, legendary items
+scan
+spells
+skills
+races - caster fighter
+recall
+run
+give
+drop all
+get all
+wear locations
+friends
+
+auc appraise
+
+get bug - multiples, get one removes all

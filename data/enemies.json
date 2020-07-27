@@ -1,0 +1,486 @@
+[
+  {
+    "ID": 1,
+    "NAME": "A gross maggot",
+    "DESCRIPTION": "Ok, this is definitely the grossest maggot you have ever seen. You intuition tells you to stay far away from this creature. Gross!",
+    "HITPOINTS": 5,
+    "ACCURACY": 40,
+    "DODGING": -30,
+    "STRIKEDAMAGE": 1,
+    "DAMAGEABSORB": 0,
+    "EXPERIENCE": 4,
+    "WEAPON": 0,
+    "MONEYMIN": 1,
+    "MONEYMAX": 5,
+    "LOOT": [
+      {
+        "itemId": 1,
+        "chance": 25
+      }
+    ],
+    "FLAGS": [
+      "NOWANDER"
+    ]
+  },
+  {
+    "ID": 2,
+    "NAME": "A green sloth",
+    "DESCRIPTION": "This sloth appears to be a color of an off-shade dark green. There's definitely something wrong with it. It barely notices you climbing by.",
+    "HITPOINTS": 6,
+    "ACCURACY": 45,
+    "DODGING": -30,
+    "STRIKEDAMAGE": 1,
+    "DAMAGEABSORB": 0,
+    "EXPERIENCE": 5,
+    "WEAPON": 0,
+    "MONEYMIN": 1,
+    "MONEYMAX": 4,
+    "LOOT": [],
+    "FLAGS": [
+      "NOWANDER"
+    ]
+  },
+  {
+    "ID": 3,
+    "NAME": "An upside-down eagle",
+    "DESCRIPTION": "Well, up until now you've never seen an upside-down eagle. It's not dead, but it's definitely not healthy. Should you go ahead and put it out of its misery?",
+    "HITPOINTS": 6,
+    "ACCURACY": 45,
+    "DODGING": -35,
+    "STRIKEDAMAGE": 2,
+    "DAMAGEABSORB": 0,
+    "EXPERIENCE": 5,
+    "WEAPON": 0,
+    "MONEYMIN": 1,
+    "MONEYMAX": 6,
+    "LOOT": [
+      {
+        "itemId": 2,
+        "chance": 75
+      }
+    ],
+    "FLAGS": [
+      "NOWANDER"
+    ]
+  },
+  {
+    "ID": 4,
+    "NAME": "A poacher",
+    "DESCRIPTION": "This guy walks around the forest trying to steal anything of value!",
+    "HITPOINTS": 7,
+    "ACCURACY": 25,
+    "DODGING": -30,
+    "STRIKEDAMAGE": 1,
+    "DAMAGEABSORB": 0,
+    "EXPERIENCE": 6,
+    "WEAPON": 7,
+    "MONEYMIN": 2,
+    "MONEYMAX": 8,
+    "LOOT": [
+      {
+        "itemId": 3,
+        "chance": 50
+      },
+      {
+        "itemId": 4,
+        "chance": 50
+      }
+    ],
+    "FLAGS": []
+  },
+  {
+    "ID": 5,
+    "NAME": "a sick elephant",
+    "DESCRIPTION": "Something just doesn't seem right about this elephant. What could the poachers want from it?",
+    "HITPOINTS": 6,
+    "ACCURACY": 45,
+    "DODGING": -32,
+    "STRIKEDAMAGE": 1,
+    "DAMAGEABSORB": 0,
+    "EXPERIENCE": 6,
+    "WEAPON": 0,
+    "MONEYMIN": 0,
+    "MONEYMAX": 0,
+    "LOOT": [],
+    "FLAGS": []
+  },
+  {
+    "ID": 6,
+    "NAME": "a chipmunk",
+    "DESCRIPTION": "This looks like an ordinary chipmunk, unlike the other animals around here.",
+    "HITPOINTS": 6,
+    "ACCURACY": 45,
+    "DODGING": 10,
+    "STRIKEDAMAGE": -34,
+    "DAMAGEABSORB": 0,
+    "EXPERIENCE": 5,
+    "WEAPON": 0,
+    "MONEYMIN": 0,
+    "MONEYMAX": 0,
+    "LOOT": [],
+    "FLAGS": []
+  },
+  {
+    "ID": 7,
+    "NAME": "an ill hunter",
+    "DESCRIPTION": "This hunter definitely does not feel like going outdoors and hunting today.",
+    "HITPOINTS": 5,
+    "ACCURACY": 40,
+    "DODGING": -30,
+    "STRIKEDAMAGE": 1,
+    "DAMAGEABSORB": 0,
+    "EXPERIENCE": 5,
+    "WEAPON": 0,
+    "MONEYMIN": 1,
+    "MONEYMAX": 6,
+    "LOOT": [
+      {
+        "itemId": 5,
+        "chance": 50
+      }
+    ],
+    "FLAGS": [
+      "NOWANDER"
+    ]
+  },
+  {
+    "ID": 8,
+    "NAME": "Bandit",
+    "DESCRIPTION": "I am an enemy!",
+    "HITPOINTS": 30,
+    "ACCURACY": 70,
+    "DODGING": 30,
+    "STRIKEDAMAGE": 0,
+    "DAMAGEABSORB": 1,
+    "EXPERIENCE": 30,
+    "WEAPON": 44,
+    "MONEYMIN": 2,
+    "MONEYMAX": 15,
+    "LOOT": [
+      {
+        "itemId": 44,
+        "chance": 1
+      }
+    ],
+    "FLAGS": []
+  },
+  {
+    "ID": 9,
+    "NAME": "Mutant",
+    "DESCRIPTION": "I am an enemy!",
+    "HITPOINTS": 20,
+    "ACCURACY": 90,
+    "DODGING": 10,
+    "STRIKEDAMAGE": 2,
+    "DAMAGEABSORB": 0,
+    "EXPERIENCE": 15,
+    "WEAPON": 28,
+    "MONEYMIN": 0,
+    "MONEYMAX": 1,
+    "LOOT": [],
+    "FLAGS": []
+  },
+  {
+    "ID": 10,
+    "NAME": "Vagrant",
+    "DESCRIPTION": "I am an enemy!",
+    "HITPOINTS": 10,
+    "ACCURACY": 80,
+    "DODGING": 0,
+    "STRIKEDAMAGE": 1,
+    "DAMAGEABSORB": 0,
+    "EXPERIENCE": 9,
+    "WEAPON": 40,
+    "MONEYMIN": 0,
+    "MONEYMAX": 1,
+    "LOOT": [
+      {
+        "itemId": 40,
+        "chance": 1
+      }
+    ],
+    "FLAGS": []
+  },
+  {
+    "ID": 11,
+    "NAME": "Thief",
+    "DESCRIPTION": "I am an enemy!",
+    "HITPOINTS": 15,
+    "ACCURACY": 110,
+    "DODGING": 10,
+    "STRIKEDAMAGE": 1,
+    "DAMAGEABSORB": 0,
+    "EXPERIENCE": 14,
+    "WEAPON": 42,
+    "MONEYMIN": 3,
+    "MONEYMAX": 15,
+    "LOOT": [
+      {
+        "itemId": 42,
+        "chance": 1
+      },
+      {
+        "itemId": 41,
+        "chance": 1
+      }
+    ],
+    "FLAGS": []
+  },
+  {
+    "ID": 12,
+    "NAME": "Rock Lobster",
+    "DESCRIPTION": "I am an enemy!",
+    "HITPOINTS": 10,
+    "ACCURACY": 90,
+    "DODGING": 10,
+    "STRIKEDAMAGE": 2,
+    "DAMAGEABSORB": 0,
+    "EXPERIENCE": 8,
+    "WEAPON": 26,
+    "MONEYMIN": 0,
+    "MONEYMAX": 0,
+    "LOOT": [],
+    "FLAGS": []
+  },
+  {
+    "ID": 13,
+    "NAME": "Bikini Whale",
+    "DESCRIPTION": "I am an enemy!",
+    "HITPOINTS": 175,
+    "ACCURACY": 160,
+    "DODGING": -20,
+    "STRIKEDAMAGE": 0,
+    "DAMAGEABSORB": 5,
+    "EXPERIENCE": 150,
+    "WEAPON": 27,
+    "MONEYMIN": 0,
+    "MONEYMAX": 0,
+    "LOOT": [],
+    "FLAGS": []
+  },
+  {
+    "ID": 14,
+    "NAME": "Gang Leader",
+    "DESCRIPTION": "I am an enemy!",
+    "HITPOINTS": 120,
+    "ACCURACY": 180,
+    "DODGING": 30,
+    "STRIKEDAMAGE": 4,
+    "DAMAGEABSORB": 2,
+    "EXPERIENCE": 110,
+    "WEAPON": 63,
+    "MONEYMIN": 0,
+    "MONEYMAX": 20,
+    "LOOT": [
+      {
+        "itemId": 63,
+        "chance": 1
+      }
+    ],
+    "FLAGS": []
+  },
+  {
+    "ID": 15,
+    "NAME": "Ruffian",
+    "DESCRIPTION": "I am an enemy!",
+    "HITPOINTS": 100,
+    "ACCURACY": 140,
+    "DODGING": 40,
+    "STRIKEDAMAGE": 2,
+    "DAMAGEABSORB": 3,
+    "EXPERIENCE": 80,
+    "WEAPON": 43,
+    "MONEYMIN": 0,
+    "MONEYMAX": 10,
+    "LOOT": [
+      {
+        "itemId": 43,
+        "chance": 1
+      },
+      {
+        "itemId": 35,
+        "chance": 1
+      }
+    ],
+    "FLAGS": []
+  },
+  {
+    "ID": 16,
+    "NAME": "Robber",
+    "DESCRIPTION": "I am an enemy!",
+    "HITPOINTS": 50,
+    "ACCURACY": 140,
+    "DODGING": 40,
+    "STRIKEDAMAGE": 2,
+    "DAMAGEABSORB": 3,
+    "EXPERIENCE": 35,
+    "WEAPON": 42,
+    "MONEYMIN": 5,
+    "MONEYMAX": 15,
+    "LOOT": [
+      {
+        "itemId": 42,
+        "chance": 2
+      },
+      {
+        "itemId": 57,
+        "chance": 5
+      }
+    ],
+    "FLAGS": []
+  },
+  {
+    "ID": 17,
+    "NAME": "Corsair",
+    "DESCRIPTION": "I am an enemy!",
+    "HITPOINTS": 50,
+    "ACCURACY": 180,
+    "DODGING": 10,
+    "STRIKEDAMAGE": 5,
+    "DAMAGEABSORB": 2,
+    "EXPERIENCE": 65,
+    "WEAPON": 32,
+    "MONEYMIN": 0,
+    "MONEYMAX": 20,
+    "LOOT": [
+      {
+        "itemId": 69,
+        "chance": 1
+      }
+    ],
+    "FLAGS": []
+  },
+  {
+    "ID": 18,
+    "NAME": "Pirate",
+    "DESCRIPTION": "I am an enemy!",
+    "HITPOINTS": 100,
+    "ACCURACY": 120,
+    "DODGING": 0,
+    "STRIKEDAMAGE": 0,
+    "DAMAGEABSORB": 8,
+    "EXPERIENCE": 95,
+    "WEAPON": 33,
+    "MONEYMIN": 10,
+    "MONEYMAX": 40,
+    "LOOT": [
+      {
+        "itemId": 70,
+        "chance": 1
+      }
+    ],
+    "FLAGS": []
+  },
+  {
+    "ID": 19,
+    "NAME": "Captain Jack",
+    "DESCRIPTION": "I am an enemy!",
+    "HITPOINTS": 200,
+    "ACCURACY": 200,
+    "DODGING": 50,
+    "STRIKEDAMAGE": 10,
+    "DAMAGEABSORB": 10,
+    "EXPERIENCE": 200,
+    "WEAPON": 34,
+    "MONEYMIN": 0,
+    "MONEYMAX": 200,
+    "LOOT": [
+      {
+        "itemId": 71,
+        "chance": 1
+      }
+    ],
+    "FLAGS": []
+  },
+  {
+    "ID": 20,
+    "NAME": "A Backstreet Man",
+    "DESCRIPTION": "I am an enemy!",
+    "HITPOINTS": 150,
+    "ACCURACY": 150,
+    "DODGING": 75,
+    "STRIKEDAMAGE": 3,
+    "DAMAGEABSORB": 1,
+    "EXPERIENCE": 175,
+    "WEAPON": 58,
+    "MONEYMIN": 1,
+    "MONEYMAX": 45,
+    "LOOT": [
+      {
+        "itemId": 58,
+        "chance": 1
+      }
+    ],
+    "FLAGS": []
+  },
+  {
+    "ID": 21,
+    "NAME": "The Auctioneer",
+    "DESCRIPTION": "The auctioneer handles items from all over the world!",
+    "HITPOINTS": 500,
+    "ACCURACY": 50,
+    "DODGING": 50,
+    "STRIKEDAMAGE": 15,
+    "DAMAGEABSORB": 3,
+    "EXPERIENCE": 10,
+    "WEAPON": 0,
+    "MONEYMIN": 100,
+    "MONEYMAX": 100,
+    "LOOT": [],
+    "FLAGS": [
+      "NOATTACK",
+      "NOQUEST",
+      "NOWANDER"
+    ]
+  },
+  {
+    "ID": 22,
+    "NAME": "A tiny sparrow",
+    "DESCRIPTION": "A small red bird with a few black feathers.",
+    "HITPOINTS": 5,
+    "ACCURACY": 40,
+    "DODGING": -25,
+    "STRIKEDAMAGE": 1,
+    "DAMAGEABSORB": 0,
+    "EXPERIENCE": 5,
+    "WEAPON": 0,
+    "MONEYMIN": 1,
+    "MONEYMAX": 3,
+    "LOOT": [],
+    "FLAGS": []
+  },
+  {
+    "ID": 23,
+    "NAME": "A sickly moth",
+    "DESCRIPTION": "The moth seems to be flying about in a strange way. It is obviously sick, and about to die.",
+    "HITPOINTS": 6,
+    "ACCURACY": 45,
+    "DODGING": -30,
+    "STRIKEDAMAGE": 1,
+    "DAMAGEABSORB": 0,
+    "EXPERIENCE": 5,
+    "WEAPON": 0,
+    "MONEYMIN": 1,
+    "MONEYMAX": 5,
+    "LOOT": [],
+    "FLAGS": []
+  },
+  {
+    "ID": 24,
+    "NAME": "A brown worm",
+    "DESCRIPTION": "You see a brown worm squiggling around in the floor beneath the giant oak tree. It barely moves as you examine it.",
+    "HITPOINTS": 5,
+    "ACCURACY": 45,
+    "DODGING": -30,
+    "STRIKEDAMAGE": 1,
+    "DAMAGEABSORB": 0,
+    "EXPERIENCE": 5,
+    "WEAPON": 0,
+    "MONEYMIN": 1,
+    "MONEYMAX": 5,
+    "LOOT": [],
+    "FLAGS": [
+      "NOWANDER"
+    ]
+  }
+]

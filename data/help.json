@@ -1,0 +1,38 @@
+[
+  {
+    "ID": 1,
+    "KEYWORDS": "list",
+    "DESCRIPTION": "Shows all items in a shop.",
+    "MINRANK": "PLAYER"
+  },
+  {
+    "ID": 2,
+    "KEYWORDS": "redit",
+    "DESCRIPTION": "This should be<newline>a newline!",
+    "MINRANK": "ADMIN"
+  },
+  {
+    "ID": 3,
+    "KEYWORDS": "seeloot",
+    "DESCRIPTION": "This perk allows you to see which items an enemy may drop when you look at it. Any item the enemy has a CHANCE to drop will be displayed after the description. Note the chance of the item dropping will not be shown. See information about the SEELOOTCHANCE quest perk for more information.",
+    "MINRANK": "PLAYER"
+  },
+  {
+    "ID": 4,
+    "KEYWORDS": "seelootchance",
+    "DESCRIPTION": "This quest perk, when combined with the seeloot perk, will show the chance of the item dropping when the enemy is killed. See help seeloot for more information.",
+    "MINRANK": "PLAYER"
+  },
+  {
+    "ID": 5,
+    "KEYWORDS": "extraexp",
+    "DESCRIPTION": "With this quest perk, you will gain 10% extra experience for each kill made.",
+    "MINRANK": "PLAYER"
+  },
+  {
+    "ID": 6,
+    "KEYWORDS": "seequesttarget",
+    "DESCRIPTION": "With this quest perk, you will be able to see the exact quest target enemy when you are in the same room as it. It will appear in the room enemy list with a (Quest!) tag next to the enemy name.",
+    "MINRANK": "PLAYER"
+  }
+]

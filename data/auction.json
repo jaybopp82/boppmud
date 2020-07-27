@@ -1,0 +1,34 @@
+[
+  {
+    "ID": 1,
+    "ITEMID": 42,
+    "SELLER": "House",
+    "DATESTARTED": 1595809200116,
+    "CURRENTBID": 100,
+    "BIDDER": ""
+  },
+  {
+    "ID": 2,
+    "ITEMID": 19,
+    "SELLER": "House",
+    "DATESTARTED": 1595830800282,
+    "CURRENTBID": 100,
+    "BIDDER": ""
+  },
+  {
+    "ID": 3,
+    "ITEMID": 63,
+    "SELLER": "House",
+    "DATESTARTED": 1595852400737,
+    "CURRENTBID": 100,
+    "BIDDER": ""
+  },
+  {
+    "ID": 4,
+    "ITEMID": 43,
+    "SELLER": "House",
+    "DATESTARTED": 1595787599349,
+    "CURRENTBID": 100,
+    "BIDDER": ""
+  }
+]
