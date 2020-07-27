@@ -1,5 +1,5 @@
 {
-  "name": "simplemud",
+  "name": "boppmud",
   "version": "1.0.0",
   "description": "SimpleMUD from MUD Game Programming book ported to NodeJS",
   "main": "./src/server.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/lnguyenfx/simplemud.git"
+    "url": "git://github.com/jaybopp82/boppmud.git"
   },
   "keywords": [
     "simplemudjs",
@@ -18,12 +18,12 @@
     "mud",
     "server"
   ],
-  "author": "Long Nguyen",
-  "license": "MIT",
+  "author": "Jason Bopp",
+  "license": "",
   "bugs": {
-    "url": "https://github.com/lnguyenfx/simplemud/issues"
+    "url": "https://github.com/jaybopp82/boppmud/issues"
   },
-  "homepage": "https://github.com/lnguyenfx/simplemud#readme",
+  "homepage": "https://github.com/jaybopp82/boppmud#readme",
   "dependencies": {
     "coffee-script": "^1.12.7",
     "enum": "^2.5.0",
