@@ -209,6 +209,11 @@ class Game extends ConnectionHandler {
 		}
 
 		if (firstWord === "drop") {
+			const arg = parseWord(data, 1);
+			if (arg && arg == "all") {
+				this.dropAllItems(p);
+				return;
+			}
 			this.dropItem(removeWord(data, 0));
 			return;
 		}
@@ -1610,6 +1615,17 @@ class Game extends ConnectionHandler {
 		p.room.removeItem(i);
 		Game.sendRoom("<cyan><bold>" + p.name + " picks up " +
 				i.name + ".</bold></cyan>", p.room);
+	}
+	
+	dropAllItems(p) {
+		var count = 0;
+		p.inventory.forEach((i) => {
+			this.dropItem(i.name);
+			count++;
+		});
+		if (count==0) {
+			p.sendString("<red><bold>You don't have anything to drop!</bold></red>");
+		}
 	}
 
 	dropItem(item) {

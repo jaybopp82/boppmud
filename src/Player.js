@@ -193,6 +193,26 @@ class Player extends Entity {
 		return false;
 	}
 	
+	dropItemFromInventoryOnly(index) {
+		if (this.inventory[index] !== 0) {
+
+			if (this.weapon === index) {
+				return;
+			}
+
+			if(this.armor === index) {
+				return;
+			}
+
+			this.inventory =
+				this.inventory.filter((o, i) => i !== index);
+			this.items--;
+
+			return true;
+		}
+		return false;
+	}
+	
 	destroyItem(index) {
 		if (this.inventory[index] !== 0) {
 
@@ -340,7 +360,7 @@ class Player extends Entity {
 		this.questKills = parse("QUESTKILLS");
 		this.deaths = parse("DEATHS");
 		this.kills = parse("KILLS");
-		this.fighting = parse("FIGHTING");
+		this.fighting = parse("FIGHTING") || false;
 		this.questPerks = dataObject["QUESTPERKS"] || [];
 
 		this.recalculateStats();

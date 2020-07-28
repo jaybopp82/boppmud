@@ -25,7 +25,7 @@
   "QUESTPOINTS": 0,
   "DEATHS": 2,
   "KILLS": 70,
-  "FIGHTING": null,
+  "FIGHTING": false,
   "QUESTKILLS": 0,
   "QUESTPERKS": []
 }
