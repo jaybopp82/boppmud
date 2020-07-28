@@ -8,128 +8,128 @@
   },
   {
     "ID": 2,
-    "TEMPLATEID": 23,
-    "HITPOINTS": 6,
+    "TEMPLATEID": 22,
+    "HITPOINTS": 5,
     "ROOM": 62,
     "NEXTATTACKTIME": 0
   },
   {
     "ID": 3,
-    "TEMPLATEID": 22,
-    "HITPOINTS": 5,
-    "ROOM": 63,
-    "NEXTATTACKTIME": 0
-  },
-  {
-    "ID": 4,
     "TEMPLATEID": 23,
     "HITPOINTS": 6,
     "ROOM": 62,
     "NEXTATTACKTIME": 0
   },
   {
-    "ID": 5,
-    "TEMPLATEID": 22,
-    "HITPOINTS": 5,
-    "ROOM": 62,
-    "NEXTATTACKTIME": 0
-  },
-  {
-    "ID": 6,
+    "ID": 4,
     "TEMPLATEID": 24,
     "HITPOINTS": 5,
     "ROOM": 63,
     "NEXTATTACKTIME": 0
   },
   {
+    "ID": 5,
+    "TEMPLATEID": 1,
+    "HITPOINTS": 5,
+    "ROOM": 64,
+    "NEXTATTACKTIME": 0
+  },
+  {
+    "ID": 6,
+    "TEMPLATEID": 2,
+    "HITPOINTS": 6,
+    "ROOM": 65,
+    "NEXTATTACKTIME": 0
+  },
+  {
     "ID": 7,
-    "TEMPLATEID": 1,
-    "HITPOINTS": 5,
-    "ROOM": 64,
-    "NEXTATTACKTIME": 0
-  },
-  {
-    "ID": 8,
-    "TEMPLATEID": 1,
-    "HITPOINTS": 5,
-    "ROOM": 64,
-    "NEXTATTACKTIME": 0
-  },
-  {
-    "ID": 9,
-    "TEMPLATEID": 2,
-    "HITPOINTS": 6,
-    "ROOM": 65,
-    "NEXTATTACKTIME": 0
-  },
-  {
-    "ID": 10,
-    "TEMPLATEID": 2,
-    "HITPOINTS": 6,
-    "ROOM": 65,
-    "NEXTATTACKTIME": 0
-  },
-  {
-    "ID": 11,
     "TEMPLATEID": 3,
     "HITPOINTS": 6,
     "ROOM": 66,
     "NEXTATTACKTIME": 0
   },
   {
-    "ID": 12,
+    "ID": 8,
     "TEMPLATEID": 4,
     "HITPOINTS": 7,
     "ROOM": 71,
     "NEXTATTACKTIME": 0
   },
   {
+    "ID": 9,
+    "TEMPLATEID": 6,
+    "HITPOINTS": 6,
+    "ROOM": 71,
+    "NEXTATTACKTIME": 0
+  },
+  {
+    "ID": 10,
+    "TEMPLATEID": 22,
+    "HITPOINTS": 5,
+    "ROOM": 62,
+    "NEXTATTACKTIME": 0
+  },
+  {
+    "ID": 11,
+    "TEMPLATEID": 23,
+    "HITPOINTS": 6,
+    "ROOM": 61,
+    "NEXTATTACKTIME": 0
+  },
+  {
+    "ID": 12,
+    "TEMPLATEID": 1,
+    "HITPOINTS": 5,
+    "ROOM": 64,
+    "NEXTATTACKTIME": 0
+  },
+  {
     "ID": 13,
-    "TEMPLATEID": 4,
-    "HITPOINTS": 7,
-    "ROOM": 73,
+    "TEMPLATEID": 2,
+    "HITPOINTS": 6,
+    "ROOM": 65,
     "NEXTATTACKTIME": 0
   },
   {
     "ID": 14,
     "TEMPLATEID": 4,
     "HITPOINTS": 7,
-    "ROOM": 69,
+    "ROOM": 72,
     "NEXTATTACKTIME": 0
   },
   {
     "ID": 15,
-    "TEMPLATEID": 4,
-    "HITPOINTS": 7,
-    "ROOM": 73,
+    "TEMPLATEID": 6,
+    "HITPOINTS": 6,
+    "ROOM": 70,
     "NEXTATTACKTIME": 0
   },
   {
     "ID": 16,
     "TEMPLATEID": 5,
     "HITPOINTS": 6,
-    "ROOM": 68,
+    "ROOM": 70,
     "NEXTATTACKTIME": 0
   },
   {
     "ID": 17,
     "TEMPLATEID": 5,
     "HITPOINTS": 6,
-    "ROOM": 69,
-    "NEXTATTACKTIME": 0
-  },
-  {
-    "ID": 18,
-    "TEMPLATEID": 6,
-    "HITPOINTS": 6,
     "ROOM": 72,
     "NEXTATTACKTIME": 0
   },
   {
+    "ID": 18,
+    "TEMPLATEID": 4,
+    "HITPOINTS": 7,
+    "ROOM": 68,
+    "NEXTATTACKTIME": 0
+  },
+  {
     "ID": 19,
-    "TEMPLATEID": 6,
-    "HITPOINTS": 6,
-    "ROOM": 70,
+    "TEMPLATEID": 4,
+    "HITPOINTS": 7,
+    "ROOM": 71,
     "NEXTATTACKTIME": 0
   },
   {

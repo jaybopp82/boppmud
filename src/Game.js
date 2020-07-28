@@ -199,6 +199,11 @@ class Game extends ConnectionHandler {
 		}
 
 		if (firstWord === "get" || firstWord === "take") {
+			const arg = parseWord(data, 1);
+			if (arg && arg == "all") {
+				this.getAllItems(p, p.room);
+				return;
+			}
 			this.getItem(removeWord(data, 0));
 			return;
 		}
@@ -1535,6 +1540,29 @@ class Game extends ConnectionHandler {
 		default:
 			return false;
 		}
+	}
+	
+	getAllItems(p, room) {
+		room.items.forEach(i => {
+			if (i.type == ItemType.VANITY) {
+				p.sendString("<red><bold>You cannot take this item.</bold></red>");
+				return;
+			}
+			
+			if (i.hasFlag("NOTAKE")) {
+				p.sendString("<red><bold>You cannot take this item.</bold></red>");
+				return;
+			}
+
+			if (!p.pickUpItem(i)) {
+				p.sendString("<red><bold>You can't carry that much!</bold></red>");
+				return;
+			}
+			
+			room.removeItem(i);
+			Game.sendRoom("<cyan><bold>" + p.name + " picks up " +
+					i.name + ".</bold></cyan>", room);
+		});
 	}
 
 	getItem(item) {

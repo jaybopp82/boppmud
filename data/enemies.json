@@ -1,7 +1,7 @@
 [
   {
     "ID": 1,
-    "NAME": "A gross maggot",
+    "NAME": "a gross maggot",
     "DESCRIPTION": "Ok, this is definitely the grossest maggot you have ever seen. You intuition tells you to stay far away from this creature. Gross!",
     "HITPOINTS": 5,
     "ACCURACY": 40,
@@ -24,7 +24,7 @@
   },
   {
     "ID": 2,
-    "NAME": "A green sloth",
+    "NAME": "a green sloth",
     "DESCRIPTION": "This sloth appears to be a color of an off-shade dark green. There's definitely something wrong with it. It barely notices you climbing by.",
     "HITPOINTS": 6,
     "ACCURACY": 45,
@@ -42,7 +42,7 @@
   },
   {
     "ID": 3,
-    "NAME": "An upside-down eagle",
+    "NAME": "an upside-down eagle",
     "DESCRIPTION": "Well, up until now you've never seen an upside-down eagle. It's not dead, but it's definitely not healthy. Should you go ahead and put it out of its misery?",
     "HITPOINTS": 6,
     "ACCURACY": 45,
@@ -65,7 +65,7 @@
   },
   {
     "ID": 4,
-    "NAME": "A poacher",
+    "NAME": "a poacher",
     "DESCRIPTION": "This guy walks around the forest trying to steal anything of value!",
     "HITPOINTS": 7,
     "ACCURACY": 25,
@@ -415,7 +415,7 @@
   },
   {
     "ID": 21,
-    "NAME": "The Auctioneer",
+    "NAME": "the auctioneer",
     "DESCRIPTION": "The auctioneer handles items from all over the world!",
     "HITPOINTS": 500,
     "ACCURACY": 50,
@@ -435,7 +435,7 @@
   },
   {
     "ID": 22,
-    "NAME": "A tiny sparrow",
+    "NAME": "a tiny sparrow",
     "DESCRIPTION": "A small red bird with a few black feathers.",
     "HITPOINTS": 5,
     "ACCURACY": 40,
@@ -451,7 +451,7 @@
   },
   {
     "ID": 23,
-    "NAME": "A sickly moth",
+    "NAME": "a sickly moth",
     "DESCRIPTION": "The moth seems to be flying about in a strange way. It is obviously sick, and about to die.",
     "HITPOINTS": 6,
     "ACCURACY": 45,
@@ -467,7 +467,7 @@
   },
   {
     "ID": 24,
-    "NAME": "A brown worm",
+    "NAME": "a brown worm",
     "DESCRIPTION": "You see a brown worm squiggling around in the floor beneath the giant oak tree. It barely moves as you examine it.",
     "HITPOINTS": 5,
     "ACCURACY": 45,
