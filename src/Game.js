@@ -2259,14 +2259,14 @@ class Game extends ConnectionHandler {
 		if (!s) return false;
 		let output = "<white><bold>" +
 		"--------------------------------------------------------------------------------\r\n";
-		output += " Welcome to " + s.name + "!\r\n";
+		output += " Welcome to <yellow>" + s.name + "<white>!\r\n";
 		output += "--------------------------------------------------------------------------------\r\n";
 		output += " Item                           | Price\r\n";
 		output += "--------------------------------------------------------------------------------\r\n";
 
 		s.items.forEach(item => {
-			output += " " + tostring(item.name, 31) + "| ";
-			output += tostring(item.price) + "\r\n";
+			output += "<cyan>" + tostring(item.name, 31) + "<white>| <yellow>";
+			output += tostring(item.price) + "\r\n<white>";
 		});
 		output += "--------------------------------------------------------------------------------\r\n" +
 		"</bold></white>";
