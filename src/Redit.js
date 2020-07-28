@@ -1,7 +1,7 @@
 'use strict';
 
 const Util = require('./Util');
-const { playerDb, roomDb, enemyDb, enemyTpDb, areaDb, itemDb } = require('./Databases');
+const { playerDb, roomDb, enemyDb, enemyTpDb, areaDb, itemDb, storeDb } = require('./Databases');
 const ConnectionHandler = require('./ConnectionHandler');
 const Player = require('./Player');
 const DB = require('./Databases');
@@ -320,6 +320,28 @@ class Redit extends ConnectionHandler {
 				}
 			}
 		}
+		//Edit Store
+		if (n == 15) {
+			if (!text || text == "") {
+				this.connection.sendMessage("<bold><red>Usage: 15 New Store ID</red></bold>");
+			}
+			else if (text.trim() == "?") {
+				var msg = "<yellow><bold>Current stores:";
+				for (let store of storeDb.map.values()) {
+					msg = msg + "\r\n(" + store.id + ") - " + store.name;
+				}
+				this.connection.sendMessage(msg);
+			}
+			else {
+				if (storeDb.findById(parseInt(text)) || parseInt(text) == 0) {
+					room.data = parseInt(text);
+					this.connection.sendMessage("<bold><green>Room store ID updated!</green></bold>");
+				}
+				else {
+					this.connection.sendMessage("<bold><red>Type '15 ?' for a list of stores</red></bold>");
+				}
+			}
+		}
 		//Reprint menu
 		if (data.toLowerCase() === "") {
 			this.connection.sendMessage(this.getMsg(room));
@@ -327,7 +349,7 @@ class Redit extends ConnectionHandler {
 	}
 	
 	getMsg(tempRoom) {
-		var north = "", south = "", east = "", west = "", up = "", down = "", enemy = "", item = "";
+		var north = "", south = "", east = "", west = "", up = "", down = "", enemy = "", item = "", storeName = "";
 		
 		if (parseInt(tempRoom.rooms[Direction.NORTH]) != 0) {
 			north = roomDb.findById(parseInt(tempRoom.rooms[Direction.NORTH])).name
@@ -378,6 +400,13 @@ class Redit extends ConnectionHandler {
 			item = "none";
 		}
 		
+		if (tempRoom.data != 0) {
+			storeName = storeDb.findById(tempRoom.data).name;
+		}
+		else {
+			storeName = "none";
+		}
+		
 		var areaName = areaDb.findById(parseInt(tempRoom.area)).name;
 		
 		var msg = "<bold><white>You are editing room: <yellow>" + tempRoom.name + " [ID: " + tempRoom.id + "]</yellow>\r\n" + 
@@ -399,6 +428,7 @@ class Redit extends ConnectionHandler {
 		"<white>12) Flags: <magenta>" + tempRoom.flags + " <cyan>(Use '12 ?' for a list of all flags, or 'clear')</cyan>\r\n" +
 		"<white>13) Area : <magenta>" + tempRoom.area + " (" + areaName + ") <cyan>(Use '13 ?' for a list of areas)</cyan>\r\n" +
 		"<white>14) Item : <magenta>" + tempRoom.spawnItem + " <cyan>(" + item + ")</cyan>\r\n" +
+		"<white>15) Store: <magenta>" + tempRoom.data + " (" + storeName + ") <cyan>(Use '15 ?' to list stores)</cyan>\r\n" +
 		"\r\n" + 
 		"<white>Type a number to edit value, or (q)uit to leave and save changes: \r\n</bold>";
 		

@@ -22,6 +22,14 @@ class StoreDatabase extends EntityDatabase {
       this.add(store);
     });
   }
+  
+  save()  {
+		const dataArray = [];
+		for (let store of this.map.values()) {
+			dataArray.push(store.serialize())
+		}
+		jsonfile.writeFileSync(file, dataArray, {spaces: 2});
+	}
 
 }
 

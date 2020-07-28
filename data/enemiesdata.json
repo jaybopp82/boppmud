@@ -10,14 +10,14 @@
     "ID": 2,
     "TEMPLATEID": 22,
     "HITPOINTS": 5,
-    "ROOM": 62,
+    "ROOM": 61,
     "NEXTATTACKTIME": 0
   },
   {
     "ID": 3,
     "TEMPLATEID": 23,
     "HITPOINTS": 6,
-    "ROOM": 63,
+    "ROOM": 61,
     "NEXTATTACKTIME": 0
   },
   {
@@ -59,14 +59,14 @@
     "ID": 9,
     "TEMPLATEID": 6,
     "HITPOINTS": 6,
-    "ROOM": 72,
+    "ROOM": 70,
     "NEXTATTACKTIME": 0
   },
   {
     "ID": 10,
     "TEMPLATEID": 22,
     "HITPOINTS": 5,
-    "ROOM": 62,
+    "ROOM": 63,
     "NEXTATTACKTIME": 0
   },
   {
@@ -115,7 +115,7 @@
     "ID": 17,
     "TEMPLATEID": 5,
     "HITPOINTS": 6,
-    "ROOM": 71,
+    "ROOM": 72,
     "NEXTATTACKTIME": 0
   },
   {

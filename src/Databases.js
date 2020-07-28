@@ -46,6 +46,7 @@ const saveDatabases = () => {
   questDb.save();
   areaDb.saveData();
   helpDb.save();
+  storeDb.save();
 }
 
 loadDatabases();
