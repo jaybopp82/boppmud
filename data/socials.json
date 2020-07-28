@@ -1,0 +1,22 @@
+[
+  {
+    "ID": 1,
+    "NAME": "smile",
+    "ROOMMSG": "smiles happily."
+  },
+  {
+    "ID": 2,
+    "NAME": "laugh",
+    "ROOMMSG": "laughs out loud."
+  },
+  {
+    "ID": 3,
+    "NAME": "sigh",
+    "ROOMMSG": "sighs."
+  },
+  {
+    "ID": 4,
+    "NAME": "wave",
+    "ROOMMSG": "waves."
+  }
+]

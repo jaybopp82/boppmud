@@ -1,7 +1,7 @@
 'use strict';
 
 const Util = require('./Util');
-const { itemDb, playerDb, roomDb, storeDb, enemyTpDb, enemyDb, auctionDb, questDb, areaDb, helpDb } =
+const { itemDb, playerDb, roomDb, storeDb, enemyTpDb, enemyDb, auctionDb, questDb, areaDb, helpDb, socialDb } =
 	require('./Databases');
 const DB = require('./Databases');
 const ConnectionHandler = require('./ConnectionHandler');
@@ -857,6 +857,17 @@ class Game extends ConnectionHandler {
 			p.sendString("<red><bold>Helpfile not found.</bold></red>");
 			return;
 		}
+		
+		if (firstWord === "socials") {
+			var msg = "<cyan><bold>Current list of all socials:</cyan>\r\n";
+
+			for (let social of socialDb.map.values()) {
+				msg = msg + "<white>" + tostring(social.name, 8) + ": <yellow>[Player] " + social.roomMsg + "\r\n";
+			}
+			msg = msg + "</bold></yellow>";
+			p.sendString(msg);
+			return;
+		}
 
 		// ------------------------------------------------------------------------
 		//  GOD access commands
@@ -1393,6 +1404,16 @@ class Game extends ConnectionHandler {
 		if (firstWord === "shutdown" && p.rank >= PlayerRank.ADMIN) {
 			Game.announce("SYSTEM IS SHUTTING DOWN");
 			Game.setIsRunning(false);
+			return;
+		}
+		
+		// ------------------------------------------------------------------------
+		//  Command is a social?
+		// ------------------------------------------------------------------------
+		var social = socialDb.findByNamePartial(firstWord);
+		if (social) {
+			Game.sendRoom("<cyan>" + p.name + " " +
+					social.roomMsg + "</cyan>", p.room);
 			return;
 		}
 		

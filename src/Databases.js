@@ -8,6 +8,7 @@ const AuctionDatabase = require(path.join(__dirname, '..', 'src', 'AuctionDataba
 const QuestDatabase = require(path.join(__dirname, '..', 'src', 'QuestDatabase'));
 const AreaDatabase = require(path.join(__dirname, '..', 'src', 'AreaDatabase'));
 const HelpDatabase = require(path.join(__dirname, '..', 'src', 'HelpDatabase'));
+const SocialDatabase = require(path.join(__dirname, '..', 'src', 'SocialDatabase'));
 const { EnemyTemplateDatabase, EnemyDatabase} =
   require(path.join(__dirname, '..', 'src', 'EnemyDatabase'));
 
@@ -21,6 +22,7 @@ const auctionDb = new AuctionDatabase();
 const questDb = new QuestDatabase();
 const areaDb = new AreaDatabase();
 const helpDb = new HelpDatabase();
+const socialDb = new SocialDatabase();
 
 const loadDatabases = () => {
   itemDb.load();
@@ -34,6 +36,7 @@ const loadDatabases = () => {
   questDb.load();
   areaDb.load();
   helpDb.load();
+  socialDb.load();
 };
 
 const saveDatabases = () => {
@@ -55,4 +58,4 @@ module.exports = { itemDb, playerDb, roomDb,
                    storeDb, enemyTpDb, enemyDb,
                    loadDatabases, saveDatabases,
                    auctionDb, questDb, areaDb,
-                   helpDb };
+                   helpDb, socialDb };
