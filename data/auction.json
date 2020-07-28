@@ -22,5 +22,13 @@
     "DATESTARTED": 1595943458094,
     "CURRENTBID": 100,
     "BIDDER": ""
+  },
+  {
+    "ID": 4,
+    "ITEMID": 55,
+    "SELLER": "House",
+    "DATESTARTED": 1595970385176,
+    "CURRENTBID": 100,
+    "BIDDER": ""
   }
 ]

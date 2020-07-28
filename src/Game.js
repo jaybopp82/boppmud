@@ -11,11 +11,13 @@ const Player = require('./Player');
 const Train = require('./Train');
 const Redit = require('./Redit');
 const Iedit = require('./Iedit');
+const Sedit = require('./Sedit');
 const Eedit = require('./Eedit');
 const Aedit = require('./Aedit');
 const Hedit = require('./Hedit');
 const { cc } = require('./Telnet');
 const Room = require('./Room');
+const Store = require('./Store');
 const Area = require('./Area');
 const Help = require('./Help');
 const { EnemyTemplate, Enemy } = require('./Enemy');
@@ -1075,6 +1077,17 @@ class Game extends ConnectionHandler {
 			p.sendString(msg);
 			return;
 		}
+		
+		if (firstWord === "slist" && p.rank >= PlayerRank.ADMIN) {
+			var msg = "<cyan><bold>Current list of all stores:</cyan>\r\n";
+
+			for (let store of storeDb.map.values()) {
+				msg = msg + "<white>" + tostring(store.id, 3) + "- <yellow>" + store.name + "\r\n";
+			}
+			msg = msg + "</bold></yellow>";
+			p.sendString(msg);
+			return;
+		}
 
 		if (firstWord === "rlist" && p.rank >= PlayerRank.ADMIN) {
 			var arg = parseWord(data, 1);
@@ -1178,7 +1191,7 @@ class Game extends ConnectionHandler {
 				this.beginAedit(parseInt(p.room.area));
 			}
 			else if (isNaN(num)) {
-				p.sendString("<red><bold>Usage: iedit <item ID/create></bold></red>");
+				p.sendString("<red><bold>Usage: aedit <item ID/create></bold></red>");
 			}
 			else if (!areaDb.findById(parseInt(num))) {
 				p.sendString("<red><bold>No such area exists.</bold></red>");
@@ -1253,6 +1266,27 @@ class Game extends ConnectionHandler {
 			}
 			else {
 				this.beginIedit(num);
+			}
+			return;
+		}
+		
+		if (firstWord === "sedit" && p.rank >= PlayerRank.ADMIN) {
+			const num = parseWord(data, 1);
+			if (parseWord(data, 1) == "create") {
+				var store = new Store();
+				store.name = "New Store";
+				storeDb.add(store);
+				DB.saveDatabases();
+				p.sendString("<yellow><bold>New store created, ID: " + store.id + "</bold></yellow>");
+			}
+			else if (isNaN(num)) {
+				p.sendString("<red><bold>Usage: sedit <store ID/create></bold></red>");
+			}
+			else if (!storeDb.findById(parseInt(num))) {
+				p.sendString("<red><bold>No such store exists.</bold></red>");
+			}
+			else {
+				this.beginSedit(num);
 			}
 			return;
 		}
@@ -1422,6 +1456,12 @@ class Game extends ConnectionHandler {
 		const conn = this.connection;
 		const p = this.player;
 		conn.addHandler(new Iedit(conn, p, num));
+	}
+	
+	beginSedit(num) {
+		const conn = this.connection;
+		const p = this.player;
+		conn.addHandler(new Sedit(conn, p, num));
 	}
 	
 	beginEedit(num) {
