@@ -1123,6 +1123,9 @@ class Game extends ConnectionHandler {
 					case ItemType.VANITY:
 						type = "Vanity";
 						break;
+					case ItemType.JUNK:
+						type = "Junk";
+						break;
 					}
 					msg = msg + "<white>" + tostring(item.id, 3) + "- <yellow>" + tostringChopped(item.name, 25) + 
 					" <white>- " + tostring(type, 8) + "\r\n";
@@ -1465,6 +1468,9 @@ class Game extends ConnectionHandler {
 		case ItemType.VANITY:
 			p.sendString("<red><bold>You cannot use that item.</bold></red>");
 			return false;
+		case ItemType.JUNK:
+			p.sendString("<red><bold>You cannot use that item.</bold></red>");
+			return false;
 		}
 
 		return false;
@@ -1655,10 +1661,17 @@ class Game extends ConnectionHandler {
 			return;
 		}
 
-		Game.sendRoom("<cyan><bold>" + p.name + " drops " +
-				p.inventory[i].name + ".</bold></cyan>", p.room);
-		p.room.addItem(p.inventory[i]);
-		p.dropItem(i);
+		if (p.inventory[i].hasFlag("MELTDROP")) {
+			Game.sendRoom("<cyan><bold>" + p.name + " drops " +
+					p.inventory[i].name + ", and it disappears!</bold></cyan>", p.room);
+			p.dropItem(i);
+		}
+		else {
+			Game.sendRoom("<cyan><bold>" + p.name + " drops " +
+					p.inventory[i].name + ".</bold></cyan>", p.room);
+			p.room.addItem(p.inventory[i]);
+			p.dropItem(i);
+		}
 	}
 	
 	destroyItem(item) {
@@ -2295,7 +2308,9 @@ class Game extends ConnectionHandler {
 	
 	static auctionRandomItem() {
 		var item = itemDb.getRandomItem();
-		while (item.type == ItemType.VANITY || item.hasFlag("NOAUC") || item.hasFlag("NOAUTOAUC")) {
+		while (item.type == ItemType.VANITY || item.hasFlag("NOAUC") || 
+				item.hasFlag("NOAUTOAUC") || item.hasFlag("MELTDROP") || 
+				item.type == ItemType.JUNK) {
 			item = itemDb.getRandomItem();
 		}
 		

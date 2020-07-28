@@ -14,7 +14,7 @@ const Attribute = new Enum({
   'HPREGEN'         : 8
 });
 
-const ItemType = new Enum({'WEAPON': 0, 'ARMOR': 1, 'HEALING': 2, 'VANITY': 3});
+const ItemType = new Enum({'WEAPON': 0, 'ARMOR': 1, 'HEALING': 2, 'VANITY': 3, 'JUNK': 4});
 
 const PlayerRank = new Enum({'PLAYER': 0, 'GOD': 1, 'ADMIN': 2});
 
@@ -33,7 +33,7 @@ const Direction = new Enum({
 const RoomFlags = ['SAFE', 'AUCTION', 'NOENEMY']; //SAFE not implemented
 
 //Item Flags
-const ItemFlags = ['NOAUC', 'NOTAKE', 'NOAUTOAUC'];
+const ItemFlags = ['NOAUC', 'NOTAKE', 'NOAUTOAUC', 'MELTDROP'];
 
 //Enemy Flags
 const EnemyFlags = ['NOQUEST', 'NOATTACK', 'NOWANDER'];

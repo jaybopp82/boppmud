@@ -14,12 +14,14 @@
   "keywords": [
     "simplemudjs",
     "simplemud",
+    "boppmud",
+    "boppmudjs",
     "nodejs",
     "mud",
     "server"
   ],
   "author": "Jason Bopp",
-  "license": "",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jaybopp82/boppmud/issues"
   },
