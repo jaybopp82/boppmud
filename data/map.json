@@ -1,7 +1,7 @@
 [
   {
     "ID": 1,
-    "NAME": "Your Town Square",
+    "NAME": "The Town Square",
     "DESCRIPTION": "This is the city's town square. Folks from all around the realm come here to meet, discuss topics and even fight! You can see exits in all directions, leading to different areas of the city.",
     "TYPE": "PLAINROOM",
     "DATA": 0,

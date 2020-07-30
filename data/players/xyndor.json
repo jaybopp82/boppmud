@@ -6,7 +6,7 @@
   "STATPOINTS": 44,
   "EXPERIENCE": 187296,
   "LEVEL": 23,
-  "ROOM": 59,
+  "ROOM": 1,
   "MONEY": 221362095,
   "HITPOINTS": 370,
   "NEXTATTACKTIME": 0,
@@ -33,5 +33,5 @@
     "EXTRAEXP",
     "SEEQUESTTARGET"
   ],
-  "NEWBIEHELPER": true
+  "NEWBIEHELPER": false
 }
