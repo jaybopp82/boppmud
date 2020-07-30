@@ -27,5 +27,6 @@
   "KILLS": 0,
   "FIGHTING": false,
   "QUESTKILLS": 0,
-  "QUESTPERKS": []
+  "QUESTPERKS": [],
+  "NEWBIEHELPER": false
 }

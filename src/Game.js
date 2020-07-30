@@ -97,9 +97,54 @@ class Game extends ConnectionHandler {
 		// ------------------------------------------------------------------------
 
 		if (firstWord === "chat" || firstWord === ':') {
-			const text = removeWord(data, 0);
+			var text = removeWord(data, 0);
+			if (text[0] == '*') {
+				text = text.substr(1, text.length - 1)
+				var social = socialDb.findByNamePartial(text);
+				if (social) {
+					Game.sendGame(
+					`<white><bold>(Chat) ${p.name} ${social.roomMsg}</bold></white>`);
+					return;
+				}
+				else {
+					p.sendString("<red><bold>Social not found!</bold></red>");
+					return;
+				}
+			}
 			Game.sendGame(
 			`<white><bold>${p.name} chats: ${text}</bold></white>`);
+			return;
+		}
+		
+		if (firstWord === "newbie" || firstWord === 'new') {
+			if (p.level >= 10 && p.newbieHelper == false) {
+				p.sendString("<red><bold>You do not have access to the newbie channel.</bold></red>");
+				return;
+			}
+			var text = removeWord(data, 0);
+			if (text[0] == '*') {
+				text = text.substr(1, text.length - 1)
+				var social = socialDb.findByNamePartial(text);
+				if (social) {
+					for (let player of playerDb.map.values()) {
+						if ((player.level < 10 || player.newbieHelper == true) && player.loggedIn == true) {
+							player.sendString(
+							`<green>(Newbie Chat) ${p.name} ${social.roomMsg}</green>`);
+						}
+					}
+					return;
+				}
+				else {
+					p.sendString("<red><bold>Social not found!</bold></red>");
+					return;
+				}
+			}
+			for (let player of playerDb.map.values()) {
+				if ((player.level < 10 || player.newbieHelper == true) && player.loggedIn == true) {
+					player.sendString(
+					`<green>${p.name} newbie chats: ${text}</green>`);
+				}
+			}
 			return;
 		}
 
@@ -928,17 +973,42 @@ class Game extends ConnectionHandler {
 			var stat = parseWord(data, 2);
 			var value = parseWord(data, 3);
 			
-			if (!playerName || !stat || !value || isNaN(value)) {
+			if (!playerName || !stat || !value) {
 				p.sendString("<red><bold>Usage: set [player] [stat] [value]</bold></red>");
 				return;
 			}
-			
 			const player = playerDb.findActive(playerName);
 			if (!player) {
 				p.sendString("<red><bold>Player not found.</bold></red>");
 				return;
 			}
 			
+			//Psets with alpha value here
+			if (stat.toLowerCase() == "newbiehelper") {
+				if (value.toLowerCase() == "on") {
+					player.newbieHelper = true;
+					p.sendString("<green><bold>Newbie helper flag turned on.</bold></green>");
+					player.sendString("<green><bold>You are now a newbie helper!</bold></green>");
+					return;
+				}
+				else if (value.toLowerCase() == "off") {
+					player.newbieHelper = false;
+					p.sendString("<green><bold>Newbie helper flag turned off.</bold></green>");
+					player.sendString("<green><bold>You are no longer a newbie helper.</bold></green>");
+					return;
+				}
+				else {
+					p.sendString("<red><bold>Usage: pset player newbiehelper [on/off]</bold></red>");
+					return;
+				}
+			}
+			
+			if (isNaN(value)) {
+				p.sendString("<red><bold>Usage: set [player] [stat] [value]</bold></red>");
+				return;
+			}
+			
+			//Psets with numeric value here			
 			if (stat.toLowerCase() == "qp") {
 				player.questPoints = parseInt(value);
 				p.sendString("<green><bold>Player quest points updated.</bold></green>");
@@ -965,7 +1035,7 @@ class Game extends ConnectionHandler {
 				return;
 			}
 			else {
-				p.sendString("<red><bold>Valid stats: qp, exp, level, money, statpoints</bold></red>");
+				p.sendString("<red><bold>Valid stats: qp, exp, level, money, statpoints, newbiehelper</bold></red>");
 				return;
 			}
 			

@@ -1,41 +1,33 @@
 [
   {
     "ID": 1,
-    "ITEMID": 11,
+    "ITEMID": 3,
     "SELLER": "House",
-    "DATESTARTED": 1595900257848,
+    "DATESTARTED": 1596102135981,
     "CURRENTBID": 100,
     "BIDDER": ""
   },
   {
     "ID": 2,
-    "ITEMID": 2,
+    "ITEMID": 13,
     "SELLER": "House",
-    "DATESTARTED": 1595921858047,
-    "CURRENTBID": 100,
-    "BIDDER": ""
+    "DATESTARTED": 1596123736107,
+    "CURRENTBID": 200,
+    "BIDDER": "Xyndor"
   },
   {
     "ID": 3,
-    "ITEMID": 33,
+    "ITEMID": 3,
     "SELLER": "House",
-    "DATESTARTED": 1595943458094,
+    "DATESTARTED": 1596058934774,
     "CURRENTBID": 100,
     "BIDDER": ""
   },
   {
     "ID": 4,
-    "ITEMID": 55,
+    "ITEMID": 14,
     "SELLER": "House",
-    "DATESTARTED": 1595970385176,
-    "CURRENTBID": 100,
-    "BIDDER": ""
-  },
-  {
-    "ID": 5,
-    "ITEMID": 48,
-    "SELLER": "House",
-    "DATESTARTED": 1595971505421,
+    "DATESTARTED": 1596080535188,
     "CURRENTBID": 100,
     "BIDDER": ""
   }

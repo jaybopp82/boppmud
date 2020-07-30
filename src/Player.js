@@ -16,6 +16,7 @@ class Player extends Entity {
 		this.loggedIn = false;
 		this.active = false;
 		this.newbie = true;
+		this.newbieHelper = false;
 
 		this.experience = 0;
 		this.level = 1;
@@ -362,6 +363,7 @@ class Player extends Entity {
 		this.kills = parse("KILLS");
 		this.fighting = parse("FIGHTING") || false;
 		this.questPerks = dataObject["QUESTPERKS"] || [];
+		this.newbieHelper = parse("NEWBIEHELPER") || false;
 
 		this.recalculateStats();
 	}
@@ -397,7 +399,8 @@ class Player extends Entity {
 			"KILLS": this.kills,
 			"FIGHTING": this.fighting,
 			"QUESTKILLS": this.questKills,
-			"QUESTPERKS": this.questPerks
+			"QUESTPERKS": this.questPerks,
+			"NEWBIEHELPER": this.newbieHelper
 		}
 	}
 }
