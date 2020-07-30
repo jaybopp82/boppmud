@@ -1,8 +1,16 @@
 # BoppMUD
 
-As its name implies, BoppMUD is a NodeJS implementation of a rudimentary
-MUD server. It is intended to be used as a learning experience for those who
-has never programmed a MUD server before.
+BoppMUD is a NodeJS extension of the "simplemud" codebase.  This MUD engine
+takes the very simple MUD program a bit further, by adding the below features
+to the baseline simplemud program.  This code can be used for beginners or
+intermediate coders looking for a simple MUD starting point, but want just
+a few more features.
+
+This MUD code base is in active development!  If there is a feature you'd
+like to see, or are having issues with the current release, please reach out
+to me and we'll talk.  Also, see the issues tab for any outstanding issues
+and the Kanban board on the Projects tab for current and upcoming changes
+to the application.
 
 The original codebase for BoppMUD was written in C++ by Ron Penton, the
 author of _MUD Game Programming_ book.
@@ -35,11 +43,5 @@ author of _MUD Game Programming_ book.
 ## Special Thanks
 
 Ron Penton for the original SimpleMUD C++ codebase.
-
-Shawn Biddle for [RanvierMUD](http://ranviermud.com), which is a source of
-inspirations.
-
-Raymond Xie for the [WebTelnet](https://github.com/mudchina/webtelnet) that is
-used as the Demo.
 
 Long Nguyen for the original SimpleMUD codebase.
