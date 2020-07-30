@@ -1481,7 +1481,7 @@ class Game extends ConnectionHandler {
 		//  Command is a social?
 		// ------------------------------------------------------------------------
 		var social = socialDb.findByNamePartial(firstWord);
-		if (social) {
+		if (social && firstWord.trim() != "") {
 			Game.sendRoom("<cyan>" + p.name + " " +
 					social.roomMsg + "</cyan>", p.room);
 			return;

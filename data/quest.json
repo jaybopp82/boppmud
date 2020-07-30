@@ -1,8 +1,8 @@
 [
   {
     "ID": 1,
-    "ENEMYID": 18,
+    "ENEMYID": 2,
     "KILLED": false,
-    "POINTS": 10
+    "POINTS": 2
   }
 ]
