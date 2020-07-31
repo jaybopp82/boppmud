@@ -1,7 +1,7 @@
 {
   "name": "boppmud",
-  "version": "1.0.0",
-  "description": "SimpleMUD from MUD Game Programming book ported to NodeJS",
+  "version": "1.1.0",
+  "description": "Enhanced version of SimpleMUD",
   "main": "./src/server.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec",

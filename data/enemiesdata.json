@@ -17,7 +17,7 @@
     "ID": 3,
     "TEMPLATEID": 23,
     "HITPOINTS": 6,
-    "ROOM": 61,
+    "ROOM": 62,
     "NEXTATTACKTIME": 0
   },
   {
@@ -59,7 +59,7 @@
     "ID": 9,
     "TEMPLATEID": 6,
     "HITPOINTS": 6,
-    "ROOM": 71,
+    "ROOM": 72,
     "NEXTATTACKTIME": 0
   },
   {
@@ -94,21 +94,21 @@
     "ID": 14,
     "TEMPLATEID": 4,
     "HITPOINTS": 7,
-    "ROOM": 68,
+    "ROOM": 72,
     "NEXTATTACKTIME": 0
   },
   {
     "ID": 15,
     "TEMPLATEID": 6,
     "HITPOINTS": 6,
-    "ROOM": 71,
+    "ROOM": 72,
     "NEXTATTACKTIME": 0
   },
   {
     "ID": 16,
     "TEMPLATEID": 5,
     "HITPOINTS": 6,
-    "ROOM": 69,
+    "ROOM": 68,
     "NEXTATTACKTIME": 0
   },
   {
@@ -122,14 +122,14 @@
     "ID": 18,
     "TEMPLATEID": 4,
     "HITPOINTS": 7,
-    "ROOM": 69,
+    "ROOM": 70,
     "NEXTATTACKTIME": 0
   },
   {
     "ID": 19,
     "TEMPLATEID": 4,
     "HITPOINTS": 7,
-    "ROOM": 73,
+    "ROOM": 70,
     "NEXTATTACKTIME": 0
   },
   {
