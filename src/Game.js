@@ -15,11 +15,13 @@ const Sedit = require('./Sedit');
 const Eedit = require('./Eedit');
 const Aedit = require('./Aedit');
 const Hedit = require('./Hedit');
+const Socedit = require('./Socedit');
 const { cc } = require('./Telnet');
 const Room = require('./Room');
 const Store = require('./Store');
 const Area = require('./Area');
 const Help = require('./Help');
+const Social = require('./Social');
 const { EnemyTemplate, Enemy } = require('./Enemy');
 const Item = require('./Item');
 const AuctionItem = require('./AuctionItem');
@@ -1326,6 +1328,54 @@ class Game extends ConnectionHandler {
 			this.beginHedit(helpfile);
 			return;
 		}
+
+		if (firstWord === "socedit" && p.rank >= PlayerRank.ADMIN) {
+			const num = parseWord(data, 1);
+			const name = parseWord(data, 2);
+			if (parseWord(data, 1) == "create") {
+				if (!name) {
+					p.sendString("<red><bold>Usage: socedit create <keyword></bold></red>");
+					return;
+				}
+				var social = new Social();
+				social.name = name.toLowerCase();
+				social.roomMsg = "patiently waits for this new social.";
+				socialDb.add(social);
+				DB.saveDatabases();
+				p.sendString("<yellow><bold>New social " + social.name + " created, ID: " + social.id + "</bold></yellow>");
+				return;
+			}
+			else if (parseWord(data, 1) == "list") {
+				var msg = "<cyan><bold>Current list of socials:</bold></cyan>";
+				for (let social of socialDb.map.values()) {
+					msg += "\r\n" + social.id + " - " + social.name;
+				}
+				msg += "</bold>";
+				p.sendString(msg);
+				return;
+			}
+			else if (!num) {
+				p.sendString("<red><bold>Usage: socedit <keyword/create/list></bold></red>");
+				return;
+			}
+
+			var found = false;
+			var socialFile;
+			for (let social of socialDb.map.values()) {
+				if (social.name.toLowerCase() == num.toLowerCase()) {
+					found = true;
+					socialFile = social;
+				}
+			}
+			
+			if (!found) {
+				p.sendString("<red><bold>Social not found.</bold></red>");
+				return;
+			}
+			
+			this.beginSocedit(socialFile);
+			return;
+		}
 		
 		if (firstWord === "iedit" && p.rank >= PlayerRank.ADMIN) {
 			const num = parseWord(data, 1);
@@ -1541,6 +1591,12 @@ class Game extends ConnectionHandler {
 		const conn = this.connection;
 		const p = this.player;
 		conn.addHandler(new Hedit(conn, p, helpfile));
+	}
+
+	beginSocedit(social) {
+		const conn = this.connection;
+		const p = this.player;
+		conn.addHandler(new Socedit(conn, p, social));
 	}
 	
 	beginIedit(num) {
@@ -2310,6 +2366,7 @@ class Game extends ConnectionHandler {
 		" eedit [create/id]          - Edit enemy or create another\r\n" +
 		" aedit [create/id]          - Edit area or create another\r\n" +
 		" hedit [create/keyword/list]- Edit helpfile or create another\r\n" +
+		" socedit [create/key/list]  - Edit social or create another\r\n" +
 		" iload <id>                 - Loads an item into your inventory\r\n" +
 		" eload <id>                 - Loads an enemy into the current room\r\n" +
 		" quest reset                - Begins a new quest\r\n" +
@@ -2450,7 +2507,7 @@ class Game extends ConnectionHandler {
 		auc.seller = "House";
 		auctionDb.add(auc);
 		DB.saveDatabases();
-		Game.sendGame("<yellow><bold>AUCTION: Today's special auction is: " + item.name + "!</bold></yellow>");
+		Game.sendGame("<yellow><bold>AUCTION: A new auction has been created: " + item.name + "!</bold></yellow>");
 		return;
 	}
 	
@@ -2486,7 +2543,7 @@ class Game extends ConnectionHandler {
 		output += "Welcome to <yellow>" + player.room.name + "</yellow>!\r\n";
 		if (numItems == 0) {
 			output += "Our inventory is running low today.\r\n";
-			output += "Please come back at a later time.\r\n";
+			output += "Please come back at a later time.";
 			return output;
 		}
 		else {

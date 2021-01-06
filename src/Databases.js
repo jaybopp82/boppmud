@@ -50,6 +50,7 @@ const saveDatabases = () => {
   areaDb.saveData();
   helpDb.save();
   storeDb.save();
+  socialDb.save();
 }
 
 loadDatabases();

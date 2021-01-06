@@ -14,7 +14,7 @@
     "NAME": "The Blighted Forest",
     "MINLEVEL": 1,
     "MAXLEVEL": 5,
-    "MOBDEATHS": 61,
+    "MOBDEATHS": 62,
     "PLAYERDEATHS": 1,
     "LEVELLOCK": 0,
     "FLAGS": []

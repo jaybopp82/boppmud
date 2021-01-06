@@ -16,6 +16,14 @@ class Social extends Entity {
 		this.roomMsg = dataObject["ROOMMSG"];
 	}
 
+	serialize() {
+		return {
+			"ID": this.id,
+			"NAME": this.name,
+			"ROOMMSG": this.roomMsg
+		};
+	}
+
 }
 
 module.exports = Social;

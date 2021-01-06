@@ -24,6 +24,14 @@ class SocialDatabase extends EntityDatabase {
 		});
 	}
 
+	save()  {
+		const socialArray = [];
+		for (let social of this.map.values()) {
+			socialArray.push(social.serialize())
+		}
+		jsonfile.writeFileSync(file, socialArray, {spaces: 2});
+	}
+
 }
 
 module.exports = SocialDatabase;
