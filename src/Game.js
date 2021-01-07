@@ -949,6 +949,60 @@ class Game extends ConnectionHandler {
 		//  ADMIN access commands
 		// ------------------------------------------------------------------------
 		
+		if (firstWord === "pnotes" && p.rank >= PlayerRank.ADMIN) {
+			var playerName = parseWord(data, 1);
+			var nextWord = parseWord(data, 2);
+
+			if (!playerName) {
+				p.sendString("<red><bold>Usage: pnotes [player] [message/-]</bold></red>");
+				return;
+			}
+
+			if (playerName && !nextWord) {
+				var player = playerDb.findByPlayerName(playerName);
+				if (!player) {
+					p.sendString("<red><bold>Player not found.</bold></red>");
+					return;
+				}
+				var found = false;
+				var msg = "<cyan><bold>Current player notes for " + player.name + ":</cyan>";
+				player.pnotes.forEach(note => {
+					found = true;
+					msg = msg + "\r\n<white><bold>" + note + "</bold></white>";
+				});
+				if (!found) {
+					msg = msg + "\r\n<white><bold>None</bold></white>";
+				}
+				p.sendString(msg);
+				return;
+			}
+
+			if (nextWord == "-") {
+				var player = playerDb.findByPlayerName(playerName);
+				if (!player) {
+					p.sendString("<red><bold>Player not found.</bold></red>");
+					return;
+				}
+				player.pnotes.pop();
+				p.sendString("<white><bold>Newest player note removed.</bold></white>");
+				DB.saveDatabases();
+				return;
+			}
+			else {
+				var player = playerDb.findByPlayerName(playerName);
+				if (!player) {
+					p.sendString("<red><bold>Player not found.</bold></red>");
+					return;
+				}
+				var text = removeWord(data, 1);
+				text = removeWord(text, 0);
+				player.pnotes.push(text);
+				p.sendString("<white><bold>Player note added.</bold></white>");
+				DB.saveDatabases();
+				return;
+			}
+		}
+
 		if (firstWord === "giveqp" && p.rank >= PlayerRank.ADMIN) {
 			var playerName = parseWord(data, 1);
 			var points = parseWord(data, 2);
@@ -1307,7 +1361,7 @@ class Game extends ConnectionHandler {
 				return;
 			}
 			else if (!num) {
-				p.sendString("<red><bold>Usage: hedit <keyword></bold></red>");
+				p.sendString("<red><bold>Usage: hedit <keyword/create/list></bold></red>");
 				return;
 			}
 

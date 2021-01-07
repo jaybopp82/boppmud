@@ -47,6 +47,7 @@ class Player extends Entity {
 		this.hitPoints = this.GetAttr(Attribute.MAXHITPOINTS);
 		
 		this.questPerks = [];
+		this.pnotes = [];
 	}
 
 	_initAttributes() {
@@ -363,6 +364,7 @@ class Player extends Entity {
 		this.kills = parse("KILLS");
 		this.fighting = parse("FIGHTING") || false;
 		this.questPerks = dataObject["QUESTPERKS"] || [];
+		this.pnotes = dataObject["PNOTES"] || [];
 		this.newbieHelper = parse("NEWBIEHELPER") || false;
 
 		this.recalculateStats();
@@ -400,6 +402,7 @@ class Player extends Entity {
 			"FIGHTING": this.fighting,
 			"QUESTKILLS": this.questKills,
 			"QUESTPERKS": this.questPerks,
+			"PNOTES": this.pnotes,
 			"NEWBIEHELPER": this.newbieHelper
 		}
 	}
