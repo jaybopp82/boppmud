@@ -7,6 +7,7 @@ const { Attribute } = require('./Attributes');
 const AuctionItem = require('./AuctionItem');
 const Item = require('./Item');
 const Player = require('./Player');
+const { playerDb, areaDb } = require('./Databases');
 
 const Util = require('./Util');
 const DB = require('./Databases');
@@ -162,6 +163,14 @@ class GameLoop {
 	}
 
 	performRegen() {
+		//Spawn message to players
+		for (let p of playerDb.map.values()) {
+			if (p.active && p.loggedIn) {
+				var area = areaDb.findById(parseInt(p.room.area));
+				var spawnMsg = area.spawnMsg;
+				p.sendStringNoPrompt("<cyan><bold>" + spawnMsg + "</bold></cyan>");
+			}
+		}
 		for (let room of DB.roomDb.map.values()) {
 			//Enemies
 			if (room.spawnWhich !== 0) {

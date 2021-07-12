@@ -783,6 +783,11 @@ class Game extends ConnectionHandler {
 				return;
 			}
 			
+			if (!enemy) {
+				p.sendString("<red><bold>There is no quest running. Another will begin shortly.</bold></red>");
+				return;
+			}
+
 			const area = areaDb.findById(parseInt(enemy.room.area));
 			p.sendString("<red><bold>The current target is: </red>" + enemy.name + "<red>, located at </red>" + enemy.room.name + "<red>,\r\n" +
 					"In the area </red>" +  area.name + "<red>. It is worth </red>" + quest.points + "<red> quest points!</bold></red>");
@@ -1099,6 +1104,15 @@ class Game extends ConnectionHandler {
 		}
 		
 		if (firstWord === "spawn" && p.rank >= PlayerRank.ADMIN) {
+			p.sendStringNoPrompt("<green><bold>Spawning area now...</bold></green>");
+			//Spawn message to players
+			for (let p of playerDb.map.values()) {
+				if (p.active && p.loggedIn) {
+					var area = areaDb.findById(parseInt(p.room.area));
+					var spawnMsg = area.spawnMsg;
+					p.sendStringNoPrompt("<cyan><bold>" + spawnMsg + "</bold></cyan>");
+				}
+			}
 			for (let room of DB.roomDb.map.values()) {
 				//Enemies
 				if (room.spawnWhich !== 0) {
@@ -1124,7 +1138,6 @@ class Game extends ConnectionHandler {
 				}
 			}
 			DB.saveDatabases();
-			p.sendString("<green><bold>Spawn complete.</bold></green>");
 			return;
 		}
 		

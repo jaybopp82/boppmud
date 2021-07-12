@@ -128,6 +128,16 @@ class Aedit extends ConnectionHandler {
 				this.connection.sendMessage("<bold><green>Level Lock updated!</green></bold>");
 			}
 		}
+		//Edit Spawn Message
+		if (n == 6) {
+			if (!text || text == "") {
+				this.connection.sendMessage("<bold><red>Usage: 6 New Spawn Message</red></bold>");
+			}
+			else {
+				area.spawnMsg = text;
+				this.connection.sendMessage("<bold><green>Spawn message updated!</green></bold>");
+			}
+		}
 		//Reprint menu
 		if (data.toLowerCase() === "") {
 			this.connection.sendMessage(this.getMsg(area));
@@ -143,6 +153,7 @@ class Aedit extends ConnectionHandler {
 		"<white>3) MaxLvl : <magenta>" + area.maxLevel + " </magenta>\r\n" +
 		"<white>4) Flags  : <magenta>" + area.flags + " <cyan>(Use '4 ?' for a list of all flags, or 'clear')</cyan>\r\n" +
 		"<white>5) LvlLock: <magenta>" + area.levelLock + " </magenta>\r\n" +
+		"<white>6) Respawn: <magenta>" + area.spawnMsg + "</magenta>\r\n" + 
 		"\r\n" + 
 		"<white>Type a number to edit value, or (q)uit to leave and save changes: \r\n</bold>";
 		

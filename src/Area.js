@@ -13,6 +13,7 @@ class Area extends Entity {
 		this.playerDeaths = 0;
 		this.levelLock = 0;
 		this.flags = [];
+		this.spawnMsg = "The area has spawned new enemies!";
 	}
 
 	load(templateObject) {
@@ -24,6 +25,7 @@ class Area extends Entity {
 		this.playerDeaths = parseInt(templateObject["PLAYERDEATHS"]);
 		this.levelLock = parseInt(templateObject["LEVELLOCK"]);
 		this.flags = templateObject["FLAGS"] || [];
+		this.spawnMsg = templateObject["SPAWNMSG"];
 	}
 
 	serialize() {
@@ -35,7 +37,8 @@ class Area extends Entity {
 			"MOBDEATHS": this.mobDeaths,
 			"PLAYERDEATHS": this.playerDeaths,
 			"LEVELLOCK": this.levelLock,
-			"FLAGS": this.flags
+			"FLAGS": this.flags,
+			"SPAWNMSG": this.spawnMsg
 		};
 	}
 
