@@ -8,6 +8,7 @@
   "LEVEL": 1,
   "ROOM": 59,
   "MONEY": 3640,
+  "BANK": 0,
   "HITPOINTS": 10,
   "NEXTATTACKTIME": 0,
   "STRENGTH": 1,

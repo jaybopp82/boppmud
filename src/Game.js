@@ -921,6 +921,64 @@ class Game extends ConnectionHandler {
 			return;
 		}
 
+		if (firstWord === "deposit") {
+			var amount = parseWord(data, 1);
+			if (p.room.flags.indexOf('BANK') == -1) {
+				p.sendString("<red><bold>" + p.room.name + " is not equipped to handle banking transactions.</bold></red>");
+				return;
+			}
+			if (!amount || amount == "") {
+				p.sendString("<bold><red>Deposit how much?</red></bold>");
+				return;
+			}
+			if (isNaN(amount)) {
+				p.sendString("<bold><red>Usage: deposit <amount></red></bold>");
+				return;
+			}
+			if (amount <= 0) {
+				p.sendString("<bold><red>Usage: deposit <amount></red></bold>");
+				return;
+			}
+			if (p.money < parseInt(amount)) {
+				p.sendString("<bold><red>You don't have that much on hand.</red></bold>");
+				return;
+			}
+			p.money -= parseInt(amount);
+			p.bank += parseInt(amount);
+			DB.saveDatabases();
+			p.sendString("<bold><green>You deposit $" + amount + ".</green></bold>");
+			return;
+		}
+
+		if (firstWord === "withdraw") {
+			var amount = parseWord(data, 1);
+			if (p.room.flags.indexOf('BANK') == -1) {
+				p.sendString("<red><bold>" + p.room.name + " is not equipped to handle banking transactions.</bold></red>");
+				return;
+			}
+			if (!amount || amount == "") {
+				p.sendString("<bold><red>Withdraw how much?</red></bold>");
+				return;
+			}
+			if (isNaN(amount)) {
+				p.sendString("<bold><red>Usage: withdraw <amount></red></bold>");
+				return;
+			}
+			if (amount <= 0) {
+				p.sendString("<bold><red>Usage: withdraw <amount></red></bold>");
+				return;
+			}
+			if (p.bank < parseInt(amount)) {
+				p.sendString("<bold><red>You don't have that much in the bank.</red></bold>");
+				return;
+			}
+			p.money += parseInt(amount);
+			p.bank -= parseInt(amount);
+			DB.saveDatabases();
+			p.sendString("<bold><green>You withdraw $" + amount + ".</green></bold>");
+			return;
+		}
+
 		// ------------------------------------------------------------------------
 		//  GOD access commands
 		// ------------------------------------------------------------------------
@@ -2700,7 +2758,7 @@ class Game extends ConnectionHandler {
 		else itemList += p.Armor().name;
 
 		// Money
-		itemList += "\r\n Money:  $" + p.money;
+		itemList += "\r\n Money:  $" + p.money + ", Bank: $" + p.bank;
 		
 		// Quest Points
 		itemList += "\r\n Quest:  " + p.questPoints + " Points";

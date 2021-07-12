@@ -22,6 +22,7 @@ class Player extends Entity {
 		this.level = 1;
 		this.room = 1;
 		this.money = 0;
+		this.bank = 0;
 		this.questPoints = 0;
 		this.questKills = 0;
 		this.deaths = 0;
@@ -343,6 +344,7 @@ class Player extends Entity {
 		this.level = parse("LEVEL");
 		this.room = parse("ROOM");
 		this.money = parse("MONEY");
+		this.bank = parse("BANK");
 		this.hitPoints = parse("HITPOINTS");
 		this.nextAttackTime = parse("NEXTATTACKTIME");
 		Attribute.enums.forEach(attr => {
@@ -382,6 +384,7 @@ class Player extends Entity {
 			"LEVEL": this.level,
 			"ROOM": (isNaN(this.room) ? this.room.id : this.room),
 			"MONEY": this.money,
+			"BANK": this.bank,
 			"HITPOINTS": this.hitPoints,
 			"NEXTATTACKTIME": this.nextAttackTime,
 			"STRENGTH": attr[Attribute.STRENGTH],

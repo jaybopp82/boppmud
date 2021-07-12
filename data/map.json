@@ -1069,6 +1069,7 @@
     "MAXENEMIES": 1,
     "FLAGS": [
       "AUCTION",
+      "BANK",
       "NOENEMY"
     ],
     "AREA": 1,

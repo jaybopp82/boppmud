@@ -30,7 +30,7 @@ const Direction = new Enum({
 });
 
 //Room Flags
-const RoomFlags = ['SAFE', 'AUCTION', 'NOENEMY']; //SAFE not implemented
+const RoomFlags = ['SAFE', 'AUCTION', 'NOENEMY', 'BANK']; //SAFE not implemented
 
 //Item Flags
 const ItemFlags = ['NOAUC', 'NOTAKE', 'NOAUTOAUC', 'MELTDROP'];

@@ -7,6 +7,27 @@
     "NEXTATTACKTIME": 0
   },
   {
+    "ID": 2,
+    "TEMPLATEID": 22,
+    "HITPOINTS": 5,
+    "ROOM": 61,
+    "NEXTATTACKTIME": 0
+  },
+  {
+    "ID": 3,
+    "TEMPLATEID": 23,
+    "HITPOINTS": 6,
+    "ROOM": 61,
+    "NEXTATTACKTIME": 0
+  },
+  {
+    "ID": 4,
+    "TEMPLATEID": 24,
+    "HITPOINTS": 5,
+    "ROOM": 63,
+    "NEXTATTACKTIME": 0
+  },
+  {
     "ID": 5,
     "TEMPLATEID": 1,
     "HITPOINTS": 5,
@@ -28,6 +49,27 @@
     "NEXTATTACKTIME": 0
   },
   {
+    "ID": 8,
+    "TEMPLATEID": 4,
+    "HITPOINTS": 7,
+    "ROOM": 72,
+    "NEXTATTACKTIME": 0
+  },
+  {
+    "ID": 9,
+    "TEMPLATEID": 5,
+    "HITPOINTS": 6,
+    "ROOM": 73,
+    "NEXTATTACKTIME": 0
+  },
+  {
+    "ID": 10,
+    "TEMPLATEID": 6,
+    "HITPOINTS": 6,
+    "ROOM": 70,
+    "NEXTATTACKTIME": 0
+  },
+  {
     "ID": 11,
     "TEMPLATEID": 1,
     "HITPOINTS": 5,
@@ -42,6 +84,48 @@
     "NEXTATTACKTIME": 0
   },
   {
+    "ID": 13,
+    "TEMPLATEID": 22,
+    "HITPOINTS": 5,
+    "ROOM": 63,
+    "NEXTATTACKTIME": 0
+  },
+  {
+    "ID": 14,
+    "TEMPLATEID": 23,
+    "HITPOINTS": 6,
+    "ROOM": 62,
+    "NEXTATTACKTIME": 0
+  },
+  {
+    "ID": 15,
+    "TEMPLATEID": 4,
+    "HITPOINTS": 7,
+    "ROOM": 73,
+    "NEXTATTACKTIME": 0
+  },
+  {
+    "ID": 16,
+    "TEMPLATEID": 5,
+    "HITPOINTS": 6,
+    "ROOM": 68,
+    "NEXTATTACKTIME": 0
+  },
+  {
+    "ID": 17,
+    "TEMPLATEID": 6,
+    "HITPOINTS": 6,
+    "ROOM": 72,
+    "NEXTATTACKTIME": 0
+  },
+  {
+    "ID": 18,
+    "TEMPLATEID": 4,
+    "HITPOINTS": 7,
+    "ROOM": 69,
+    "NEXTATTACKTIME": 0
+  },
+  {
     "ID": 19,
     "TEMPLATEID": 7,
     "HITPOINTS": 5,
@@ -53,6 +137,13 @@
     "TEMPLATEID": 7,
     "HITPOINTS": 5,
     "ROOM": 74,
+    "NEXTATTACKTIME": 0
+  },
+  {
+    "ID": 21,
+    "TEMPLATEID": 4,
+    "HITPOINTS": 7,
+    "ROOM": 73,
     "NEXTATTACKTIME": 0
   }
 ]
