@@ -979,6 +979,19 @@ class Game extends ConnectionHandler {
 			return;
 		}
 
+		if (firstWord === "afk") {
+			if (p.afk) {
+				p.afk = false;
+				p.sendString("<bold><green>You return to the game.</green></bold>");
+				return;
+			}
+			else {
+				p.afk = true;
+				p.sendString("<bold><green>You step away from the game.</green></bold>");
+				return;
+			}
+		}
+
 		// ------------------------------------------------------------------------
 		//  GOD access commands
 		// ------------------------------------------------------------------------
@@ -2407,6 +2420,7 @@ class Game extends ConnectionHandler {
 				str += tostring(p.level.toString(), 10) + "| ";
 
 				if (p.active && p.loggedIn && p.fighting) str += "<red>Fighting</red>";
+				else if (p.afk) str += "<yellow>Away    </yellow>";
 				else if (p.active) str += "<green>Online  </green>";
 				else if (p.loggedIn) str += "<yellow>Inactive</yellow>";
 				else str += "<red>Offline </red>";

@@ -15,6 +15,7 @@ class Player extends Entity {
 		this.connection = 0;
 		this.loggedIn = false;
 		this.active = false;
+		this.afk = false;
 		this.newbie = true;
 		this.newbieHelper = false;
 
@@ -324,10 +325,14 @@ class Player extends Entity {
 		else if (ratio < 67) color = "yellow";
 		else color = "green";
 
-		const statbar = require('util').format(
+		var statbar = require('util').format(
 				"<white><bold>[<%s>%s</%s>/%s]</bold></white>",
 				color, this.hitPoints, color,
 				this.GetAttr(Attribute.MAXHITPOINTS));
+
+		if (this.afk) {
+			statbar += "<bold><red> *AFK*</red></bold>";
+		}
 
 		this.connection.sendMessage(statbar + '\r\n');
 	}
