@@ -5,6 +5,7 @@ const ConnectionHandler = require('./ConnectionHandler');
 const { PlayerRank } = require('./Attributes');
 const Player = require('./Player');
 const Game = require('./Game');
+const { PassthroughLiteral } = require('coffee-script/lib/coffee-script/nodes');
 
 // Acceptable states
 const NEWCONNECTION = "NEWCONNECTION";
@@ -106,6 +107,7 @@ class Logon extends ConnectionHandler {
 
       const player = new Player();
       player.name = this.name;
+      player.dateCreated = new Date();
       player.password = data;
 
       // make the player the administrator if he's the first to log in.

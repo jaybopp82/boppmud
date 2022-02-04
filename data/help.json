@@ -34,5 +34,11 @@
     "KEYWORDS": "seequesttarget",
     "DESCRIPTION": "With this quest perk, you will be able to see the exact quest target enemy when you are in the same room as it. It will appear in the room enemy list with a (Quest!) tag next to the enemy name.",
     "MINRANK": "PLAYER"
+  },
+  {
+    "ID": 7,
+    "KEYWORDS": "afk",
+    "DESCRIPTION": "Use the AFK command to let others know you have stepped away from the game, or have returned. An AFK flag will be displayed on your prompt to let you know you are currently away, and you will show as Away in the who player listing.",
+    "MINRANK": "PLAYER"
   }
 ]

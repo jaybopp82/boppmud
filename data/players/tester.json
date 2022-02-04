@@ -1,13 +1,13 @@
 {
-  "ID": 2,
-  "NAME": "Rhuli",
+  "ID": 3,
+  "NAME": "Tester",
   "PASS": "gateway",
   "RANK": "PLAYER",
   "STATPOINTS": 18,
   "EXPERIENCE": 0,
   "LEVEL": 1,
-  "ROOM": 59,
-  "MONEY": 3640,
+  "ROOM": 1,
+  "MONEY": 0,
   "BANK": 0,
   "HITPOINTS": 10,
   "NEXTATTACKTIME": 0,
@@ -20,7 +20,7 @@
   "STRIKEDAMAGE": 0,
   "DAMAGEABSORB": 0,
   "HPREGEN": 0,
-  "INVENTORY": "41 57",
+  "INVENTORY": "",
   "WEAPON": -1,
   "ARMOR": -1,
   "QUESTPOINTS": 0,
@@ -31,5 +31,5 @@
   "QUESTPERKS": [],
   "PNOTES": [],
   "NEWBIEHELPER": false,
-  "DATECREATED": "2022-01-19T22:04:55.005Z"
+  "DATECREATED": "2022-01-19T22:20:00.904Z"
 }

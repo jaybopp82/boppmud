@@ -177,6 +177,15 @@ class Game extends ConnectionHandler {
 			return;
 		}
 
+		if (firstWord === "whois") {
+			var name = parseWord(data, 1);
+			if (!name) {
+				name = p.name;
+			}
+			this.whois(name);
+			return;
+		}
+
 		if (firstWord === "time") {
 			const msg = "<bold><cyan>" +
 			"The current system time is: " +
@@ -2389,6 +2398,36 @@ class Game extends ConnectionHandler {
 					"<yellow>You whisper to " + player.name +
 					": </yellow>" + msg);
 		}
+	}
+
+	whois(playerName) {
+		const p = playerDb.findActive(playerName);
+
+		if (!p) {
+			this.player.sendString(
+				"<red><bold>Player not found.</bold></red>");
+			return;
+		}
+
+		var Difference_In_Time = new Date(p.dateCreated).getTime() - new Date().getTime();
+		var Difference_In_Days = Math.abs(parseInt(Difference_In_Time / (1000 * 3600 * 24)));
+
+		const str = "<white><bold>" +
+		"--------------------------------- Player Whois ---------------------------------\r\n" +
+		" Name:          " + p.name + "\r\n" +
+		" Rank:          " + p.rank.toString() + "\r\n" +
+		this.printExperience() + "\r\n" +
+		"--------------------------------------------------------------------------------" +
+		" Deaths:        " + tostring(p.deaths, 16) +
+		" Kills:         " + tostring(p.kills) + "\r\n" +
+		" Quest Points:  " + tostring(p.questPoints, 16) +
+		" Quest Kills:   " + tostring(p.questKills) + "\r\n" +
+		"--------------------------------------------------------------------------------" +
+		" Antiquity:     " + Difference_In_Days + " Days" + "\r\n" +
+		"--------------------------------------------------------------------------------" +
+		"</bold></white>";
+
+		this.player.sendString(str);
 	}
 
 	static whoList(mode) {

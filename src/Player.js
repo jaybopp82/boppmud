@@ -50,6 +50,7 @@ class Player extends Entity {
 		
 		this.questPerks = [];
 		this.pnotes = [];
+		this.dateCreated = "";
 	}
 
 	_initAttributes() {
@@ -373,6 +374,7 @@ class Player extends Entity {
 		this.questPerks = dataObject["QUESTPERKS"] || [];
 		this.pnotes = dataObject["PNOTES"] || [];
 		this.newbieHelper = parse("NEWBIEHELPER") || false;
+		this.dateCreated = dataObject["DATECREATED"];
 
 		this.recalculateStats();
 	}
@@ -411,7 +413,8 @@ class Player extends Entity {
 			"QUESTKILLS": this.questKills,
 			"QUESTPERKS": this.questPerks,
 			"PNOTES": this.pnotes,
-			"NEWBIEHELPER": this.newbieHelper
+			"NEWBIEHELPER": this.newbieHelper,
+			"DATECREATED": this.dateCreated
 		}
 	}
 }
