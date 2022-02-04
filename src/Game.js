@@ -2911,7 +2911,8 @@ class Game extends ConnectionHandler {
 		// ---------------------------------
 		// ENEMIES
 		// ---------------------------------
-		temp = "<bold><red>[Enemies]: ";
+		//temp = "<bold><red>[Enemies]: ";
+		temp = "<bold><red>   [NPCs]: ";
 		count = 0;
 
 		room.enemies.forEach(enemy => {
