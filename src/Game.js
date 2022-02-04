@@ -205,6 +205,10 @@ class Game extends ConnectionHandler {
 		if (firstWord === "whisper") {
 			// get the players name
 			const name = parseWord(data, 1);
+			if (!name || p.name.toLowerCase() === name.toLowerCase()) {
+				p.sendString("<red><bold>Syntax: whisper <player> <message></bold></red>");
+				return;
+			}
 			const message = removeWord(removeWord(data, 0), 0);
 			this.whisper(message, name);
 			return;
@@ -2390,13 +2394,23 @@ class Game extends ConnectionHandler {
 		if (!player) {
 			this.player.sendString(
 			"<red><bold>Player not found.</bold></red>");
-		} else {
+		} 
+		else {
 			player.sendString(
 					"<yellow>" + this.player.name +
 					" whispers to you: </yellow>" + msg);
-			this.player.sendString(
+			if (player.afk) {
+				this.player.sendStringNoPrompt(
 					"<yellow>You whisper to " + player.name +
 					": </yellow>" + msg);
+				this.player.sendString(
+					"<green>" + player.name + " is currently AFK and may not get your message.</green>");
+			}
+			else {
+				this.player.sendString(
+					"<yellow>You whisper to " + player.name +
+					": </yellow>" + msg);
+			}
 		}
 	}
 
